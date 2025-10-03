@@ -23,6 +23,5 @@ int main()
        }while(nota > 10 || nota < 1);   
    }
   // printf("Tenemos %d estudiantes\n",numEstudiantes);
-   wsdwsw
     return 0;
 }

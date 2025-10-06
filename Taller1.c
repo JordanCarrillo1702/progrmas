@@ -38,7 +38,7 @@ int main (){
             scanf("%d",&cantidadventa);
         }
         while(cantidadstock<cantidadventa){
-            printf("La cantidad que agrego supera cantidad de stock. Vuelva a ingresar");
+            printf("La cantidad que agrego supera cantidad de stock. Vuelva a ingresar: ");
             scanf("%d",&cantidadventa);
         }
        cantidadstock=cantidadstock-cantidadventa;

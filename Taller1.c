@@ -16,9 +16,9 @@ int main (){
     printf("El nombre del producto es: ");
     scanf("%s", nombre);
     printf("%s\n",nombre);
-    printf("Ingrese la cantidad en stock ");
+    printf("Ingrese la cantidad en stock: ");
     scanf("%d",&cantidadstock);
-    printf("Ingrese precio unitario ");
+    printf("Ingrese precio unitario: ");
     scanf("%f",&preciounitario);
    do
    {
@@ -26,13 +26,13 @@ int main (){
     scanf("%d",&controlador);
 
     if(controlador ==1){
-        printf("Ingrese cantidad stock agregar ");
+        printf("Ingrese cantidad stock agregar: ");
         scanf("%d",&agregarstock);
         cantidadstock=agregarstock+cantidadstock;
         printf("La cantidad en stock es: %d\n",cantidadstock);
     }
     if(controlador ==2){
-        printf("Ingrese cantidad que desea ");
+        printf("Ingrese cantidad que desea: ");
         scanf("%d",&cantidadventa);
         while(cantidadventa<0){
             printf("La cantidad debe ser mayor a 0");
@@ -46,7 +46,7 @@ int main (){
        sumaventa=cantidadventa+sumaventa; 
        printf("la cantidad en stock es %d , y la cantidad vendida %d\n",cantidadstock,sumaventa);
     }
-    printf("Ingrese 1 si quiere continuar caso contrario cualquier numero ");
+    printf("Ingrese 1 si quiere continuar caso contrario cualquier numero: ");
     scanf("%d",&controladorfin);
    } while (controladorfin==1);
    printf("La suma de venta %d\n",sumaventa);

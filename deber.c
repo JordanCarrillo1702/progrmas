@@ -5,7 +5,8 @@ int main()
     //ingrese cuantos estudiantes hay, ingrese las notas y saque el promedio]
     int numEstudiantes, nota, suma;
     float promedio;
-    printf("Ingrese el numero de estudiantes: ");
+    suma=0;
+    printf("Ingrese el numero de estudiantes:\n\n ");
     scanf("%d",&numEstudiantes);
    while(numEstudiantes <= 0){
        printf("el valor debe ser positivo\n");
@@ -13,15 +14,24 @@ int main()
         scanf("%d",&numEstudiantes);
    }
    for(int i = 0; i < numEstudiantes;i++){
+
        printf("Estudiante %d\n",(i + 1));
+       
        do{
            printf("Ingrese la nota, debe estar entre 1 y 10: ");
            scanf("%d",&nota);
+
            if(nota > 10 || nota < 1){
                printf("La nota no es valida, intente nuevamente\n");
            }
-       }while(nota > 10 || nota < 1);   
+       }while(nota > 10 || nota < 1);
+       
+       suma=nota+suma;
    }
+   promedio=suma/numEstudiantes;
+   printf("El promedio es %f: ",promedio);
+
   // printf("Tenemos %d estudiantes\n",numEstudiantes);
     return 0;
 }
+en esta codigo solo pon aumenta la parte para controlar que no ingresen textos en el numero de estudiantes

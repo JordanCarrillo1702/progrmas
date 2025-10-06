@@ -15,7 +15,6 @@ int main (){
     scanf("%d",&ID);
     printf("El nombre del producto es: ");
     scanf("%s", nombre);
-    printf("%s\n",nombre);
     printf("Ingrese la cantidad en stock: ");
     scanf("%d",&cantidadstock);
     printf("Ingrese precio unitario: ");

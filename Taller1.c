@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main (){
-    int ID ;
+    char ID [50] ;
     char nombre [50];
     int cantidadstock;
     float preciounitario;
@@ -12,11 +12,15 @@ int main (){
     int controlador;
     int controladorfin;
     printf("El ID es: ");
-    scanf("%d",&ID);
+    scanf("%s",&ID);
     printf("El nombre del producto es: ");
     scanf("%s", nombre);
     printf("Ingrese la cantidad en stock: ");
     scanf("%d",&cantidadstock);
+    while(cantidadstock<0){
+            printf("La cantidad debe ser mayor a 0: ");
+            scanf("%d",&cantidadstock);
+    }
     printf("Ingrese precio unitario: ");
     scanf("%f",&preciounitario);
    do
@@ -27,6 +31,10 @@ int main (){
     if(controlador ==1){
         printf("Ingrese cantidad stock agregar: ");
         scanf("%d",&agregarstock);
+        while(agregarstock<0){
+            printf("La cantidad debe ser mayor a 0: ");
+            scanf("%d",&agregarstock);
+        }
         cantidadstock=agregarstock+cantidadstock;
         printf("La cantidad en stock es: %d\n",cantidadstock);
     }
@@ -34,7 +42,7 @@ int main (){
         printf("Ingrese cantidad que desea: ");
         scanf("%d",&cantidadventa);
         while(cantidadventa<0){
-            printf("La cantidad debe ser mayor a 0");
+            printf("La cantidad debe ser mayor a 0: ");
             scanf("%d",&cantidadventa);
         }
         while(cantidadstock<cantidadventa){
@@ -48,13 +56,16 @@ int main (){
     printf("Ingrese 1 si quiere continuar caso contrario cualquier numero: ");
     scanf("%d",&controladorfin);
    } while (controladorfin==1);
+   printf("El ID es: %s\n", ID);
+   printf("El nombre del producto es: %s\n", nombre);
    printf("La suma de venta %d\n",sumaventa);
    ganancias=(sumaventa)*(preciounitario);
-   printf("Las ganancias son: %.2f",ganancias);
+   printf("Las ganancias son: %.2f\n",ganancias);
    
-    
-    
 
 
-    
+
+
+  
+   
 }

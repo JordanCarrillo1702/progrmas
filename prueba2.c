@@ -13,21 +13,25 @@ int main (){
     int i,j;
     float suma=0;
 /// ingreso de datos a la matriz
-    for (i = 0; i<numFilas; i++){
-        for (j = 0; j<numColumnas; j++){
-            printf("Ingrese la calificacion del estudiante %d en la asignatura %d: ",i+1, j+1);
-            scanf("%f",&calificaciones[i][j]);
-            while(calificaciones[i][j]<0){
-                printf("La cantidad debe ser mayor a 0: ");
-                scanf("%f",&calificaciones[i][j]);
+    for (i = 0; i < numFilas; i++) {
+    for (j = 0; j < numColumnas; j++) {
+        int valid = 0; 
+        while (valid==0) {
+            printf("Ingrese la calificacion del estudiante %d en la asignatura %d: ", i+1, j+1);
+            if (scanf("%f", &calificaciones[i][j]) != 1) {
+                printf("Entrada invalida. Debe ingresar un numero.\n");
+                while(getchar() != '\n'); 
+            } else if (calificaciones[i][j] < 0) {
+                printf("La cantidad debe ser mayor a 0.\n");
+            } else if (calificaciones[i][j] > 10) {
+                printf("La cantidad debe ser menor o igual a 10.\n");
+            } else {
+                valid = 1; 
             }
-            while(calificaciones[i][j]>10){
-                printf("La cantidad debe ser menor igual a 10: ");
-                scanf("%f",&calificaciones[i][j]);
-            }
-
         }
     }
+}
+
     //impresion de matriz actual
     for(i=0;i<numFilas;i++){
         for(j=0;j<numColumnas;j++){
@@ -89,8 +93,8 @@ int main (){
             }
         }
 
-        printf("La calificacion mas alta de la asignatura %d es %.2f\n",i+1,Max);
-        printf("La calificacion mas baja de la asignatura %d es %.2f\n",i+1,Min);
+        printf("La calificacion mas alta de la asignatura %d son %.2f\n",i+1,Max);
+        printf("La calificacion mas baja de la asignatura %d son %.2f\n",i+1,Min);
         Max=0;
         Min=11;
 
@@ -108,8 +112,8 @@ int main (){
             }
         }
 
-        printf("Los estudiantes aprobados de la asignatura %d son: %d\n",i+1,estudiantesaprobados);
-        printf("Los estudiantes reprobados de la asignatura %d son: %d\n",i+1,estudiantesreprobados);
+        printf("Los estudiantes aprobado de la asignatura %d son %d\n",i+1,estudiantesaprobados);
+        printf("Los estudiantes reprobados de la asignatura %d son %d\n",i+1,estudiantesreprobados);
         estudiantesaprobados=0;
         estudiantesreprobados=0;
 
